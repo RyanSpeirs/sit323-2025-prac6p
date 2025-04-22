@@ -1,0 +1,14 @@
+# service.yaml SIT323 6.1P  600152989 Ryan Speirs
+apiVersion: v1
+kind: Service
+metadata:
+  name: sit323-hello-service
+spec:
+  selector:
+    app: hello-app
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 3000          # Internal cluster port
+      targetPort: 3000    # Container port
+      nodePort: 30080     # External port you can access from browser/curl

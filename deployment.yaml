@@ -1,0 +1,20 @@
+#  deployment.yaml SIT323 6.1P  600152989 Ryan Speirs
+apiVersion: apps/v1
+kind: Deployment
+metadata:     # provides basic info like the name of the deployment
+  name: sit323-hello-deployment
+spec:
+  replicas: 1  # number of pods/instances to run
+  selector:     # tells kubernetes which pods this deployment will manage
+    matchLabels:
+      app: hello-app # must match the label under template
+  template:     # defines what pod to deploy and how
+    metadata:
+      labels:
+        app: hello-app # must match the label under selector
+    spec:
+      containers:
+        - name: hello-app # name of the container
+          image: ryanspeirs/sit323-6-1p-app # the docker image from Docker Hub
+          ports:
+            - containerPort: 3000 # the port node.js is listening on inside the container

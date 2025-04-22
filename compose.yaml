@@ -1,0 +1,8 @@
+#  SIT323 6.1P  600152989 Ryan Speirs
+version: '3'  #  State the version of the image
+services:  #  we list the services that will be used and their specifications
+  web:    #  Obviously we want to use web because we're trying to host a simple server.
+    build:  .
+    ports:    #  We can give it several ports, or a port range
+      - "3000:3000" #  just using 3000 as its straight forward
+    container_name: sit323-hello-web
