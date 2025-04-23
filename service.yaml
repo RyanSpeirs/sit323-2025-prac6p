@@ -2,10 +2,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sit323-hello-service
+  name: sit323-hello-prac6p-service
 spec:
   selector:
-    app: hello-app
+    app: sit-323-hello-prac6p-app
   type: NodePort
   ports:
     - protocol: TCP

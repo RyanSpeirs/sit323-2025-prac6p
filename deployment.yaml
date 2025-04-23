@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:     # provides basic info like the name of the deployment
-  name: sit323-hello-deployment
+  name: sit323-hello-prac6p-deployment
 spec:
   replicas: 1  # number of pods/instances to run
   selector:     # tells kubernetes which pods this deployment will manage
     matchLabels:
-      app: hello-app # must match the label under template
+      app: sit-323-hello-prac6p-app # must match the label under template
   template:     # defines what pod to deploy and how
     metadata:
       labels:
-        app: hello-app # must match the label under selector
+        app: sit-323-hello-prac6p-app  # must match the label under selector
     spec:
       containers:
-        - name: hello-app # name of the container
+        - name: sit-323-hello-prac6p-app # name of the container
           image: ryanspeirs/sit323-6-1p-app # the docker image from Docker Hub
           ports:
             - containerPort: 3000 # the port node.js is listening on inside the container
